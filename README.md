@@ -6,7 +6,7 @@ Plugin quality engine. She doesn't speak — she improves.
 
 Sineya is a meta-plugin for Claude Code that improves other plugins using research-backed patterns. It encodes findings from 48 academic papers, 15+ production plugins, and Anthropic's official guidance into a structured improvement process that diagnoses what's wrong with a skill and fixes it.
 
-The core insight: plugins that encode process outperform plugins that encode knowledge. Sineya applies this systematically — classifying constraint terrain, scoring against a quality checklist, and pressure-testing before ship.
+The core insight: plugins that encode process outperform plugins that encode knowledge. Sineya applies this by classifying your skill's constraint terrain, scoring it against a quality checklist, then pressure-testing before you ship.
 
 ## Installation
 
@@ -16,21 +16,11 @@ claude plugin add jbrjake/sineya
 
 ## Usage
 
-**Improve a plugin:**
-```
-/sineya:improve [path]
-```
-Runs the full improvement process and makes changes.
+`/sineya:improve [path]` runs the full improvement process and makes changes.
 
-**Audit a plugin:**
-```
-/sineya:audit [path]
-```
-Read-only diagnosis. Returns a report card with scores and top failures.
+`/sineya:audit [path]` is read-only. Returns a report card with scores and top failures.
 
-**Auto-triggering:** Sineya activates automatically when you're working on plugin quality — writing SKILL.md files, debugging compliance, reviewing plugins, or asking why a skill isn't being followed.
-
-**Agent:** For deep improvement work, Claude dispatches the sineya agent automatically to handle multi-step analysis and revision.
+The skill also activates on its own when you're working on plugin quality — writing SKILL.md files, debugging compliance, reviewing plugins. For heavier work, Claude dispatches the sineya agent to handle multi-step analysis.
 
 ## What's inside
 
