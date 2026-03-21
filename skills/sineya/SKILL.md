@@ -20,25 +20,25 @@ Mismatching terrain to constraint level is the #1 design error. Over-constrainin
 
 ## When to read each reference file
 
-Read `references/improvement-checklist.md` when:
+Read `${CLAUDE_PLUGIN_ROOT}/skills/sineya/references/improvement-checklist.md` when:
 - Creating a new plugin or reviewing an existing one
 - Debugging poor compliance (Claude ignores or partially follows the skill)
 - Designing subagent prompts for orchestrated workflows
 
-Read `references/anti-patterns.md` when:
+Read `${CLAUDE_PLUGIN_ROOT}/skills/sineya/references/anti-patterns.md` when:
 - A skill triggers but Claude rationalizes skipping steps
 - Subagents drift from specs or rubber-stamp reviews
 - You need pressure-test scenarios before release
 
-Read `references/architecture-plugin-patterns.md` when:
+Read `${CLAUDE_PLUGIN_ROOT}/skills/sineya/references/architecture-plugin-patterns.md` when:
 - Building plugins for system design, plan→implement→review pipelines, or multi-phase dev workflows
 
-Read `references/hook-patterns.md` when:
+Read `${CLAUDE_PLUGIN_ROOT}/skills/sineya/references/hook-patterns.md` when:
 - Writing hook scripts (SessionStart, PreToolUse, PostToolUse)
 - Needing deterministic enforcement that prompts cannot provide
 - Debugging silent hook failures
 
-Read `references/academic-foundations.md` when:
+Read `${CLAUDE_PLUGIN_ROOT}/skills/sineya/references/academic-foundations.md` when:
 - You want the research citations backing a specific recommendation
 - Deciding between competing approaches and need empirical evidence
 - Designing evaluation criteria for skill quality
