@@ -1,6 +1,6 @@
 #!/bin/bash
 # Validate a SKILL.md against plugin-quality-improvement recommendations.
-# Usage: ./validate-skill.sh /path/to/skill-directory
+# Usage: ${CLAUDE_PLUGIN_ROOT}/scripts/validate_skill.sh /path/to/skill-directory
 #
 # Checks structural requirements only — semantic quality requires human review.
 
