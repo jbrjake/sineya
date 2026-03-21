@@ -1,0 +1,13 @@
+{
+  "name": "sineya",
+  "description": "Primordial plugin quality engine. Distilled from 48 academic papers, 15+ production plugins, and one terrifying dream. She doesn't speak — she improves. Your plugin just doesn't know it's scared yet.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Jon Rubin",
+    "email": "jb.rubin@gmail.com",
+    "url": "https://github.com/jbrjake"
+  },
+  "repository": "https://github.com/jbrjake/sineya",
+  "license": "MIT",
+  "keywords": ["plugin-quality", "skill-improvement", "compliance", "anti-patterns", "hooks", "architecture", "meta-plugin"]
+}
