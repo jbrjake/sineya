@@ -1,0 +1,151 @@
+{
+  "trigger_precision": [
+    {
+      "id": "tp-1",
+      "query": "make this skill better",
+      "assertions": [
+        "should trigger sineya skill",
+        "should read SKILL.md for process"
+      ]
+    },
+    {
+      "id": "tp-2",
+      "query": "why isn't my plugin working",
+      "assertions": [
+        "should trigger sineya skill",
+        "should check for common plugin issues"
+      ]
+    },
+    {
+      "id": "tp-3",
+      "query": "review my SKILL.md",
+      "assertions": [
+        "should trigger sineya skill",
+        "should score against improvement checklist"
+      ]
+    },
+    {
+      "id": "tp-4",
+      "query": "help me write a plugin",
+      "assertions": [
+        "should trigger sineya skill",
+        "should guide through plugin structure"
+      ]
+    },
+    {
+      "id": "tp-5",
+      "query": "write a REST API for user management",
+      "assertions": [
+        "should NOT trigger sineya skill",
+        "should treat as normal coding task"
+      ]
+    },
+    {
+      "id": "tp-6",
+      "query": "fix this React component",
+      "assertions": [
+        "should NOT trigger sineya skill",
+        "should treat as normal coding task"
+      ]
+    }
+  ],
+  "command_behavior": [
+    {
+      "id": "cb-1",
+      "query": "/sineya:improve",
+      "assertions": [
+        "runs full improvement process",
+        "classifies terrain first",
+        "scores against checklist",
+        "makes changes"
+      ]
+    },
+    {
+      "id": "cb-2",
+      "query": "/sineya:audit",
+      "assertions": [
+        "runs structural validation script",
+        "scores against improvement checklist",
+        "returns report card",
+        "makes no changes"
+      ]
+    },
+    {
+      "id": "cb-3",
+      "query": "/sineya:audit ./nonexistent",
+      "assertions": [
+        "handles gracefully",
+        "reports that directory does not exist or has no SKILL.md"
+      ]
+    },
+    {
+      "id": "cb-4",
+      "query": "/sineya:improve .",
+      "assertions": [
+        "works with explicit cwd path",
+        "treats . as current directory"
+      ]
+    }
+  ],
+  "agent_dispatch": [
+    {
+      "id": "ad-1",
+      "query": "I need deep analysis of my plugin's compliance issues",
+      "assertions": [
+        "dispatches sineya agent",
+        "agent loads backstory for persona",
+        "agent follows SKILL.md process"
+      ]
+    },
+    {
+      "id": "ad-2",
+      "query": "improve plugin quality",
+      "assertions": [
+        "dispatches sineya agent",
+        "agent runs improvement workflow"
+      ]
+    },
+    {
+      "id": "ad-3",
+      "query": "write unit tests for my API",
+      "assertions": [
+        "does NOT dispatch sineya agent",
+        "handles as normal testing task"
+      ]
+    }
+  ],
+  "process_fidelity": [
+    {
+      "id": "pf-1",
+      "query": "improve this plugin's skill",
+      "assertions": [
+        "must classify terrain (rigid vs flexible) before proposing changes",
+        "terrain classification informs constraint intensity"
+      ]
+    },
+    {
+      "id": "pf-2",
+      "query": "make my SKILL.md more compliant",
+      "assertions": [
+        "must score against checklist before fixing",
+        "identifies Tier 1 failures first"
+      ]
+    },
+    {
+      "id": "pf-3",
+      "query": "fix my plugin's compliance issues",
+      "assertions": [
+        "must pressure test after fixes",
+        "runs at least one scenario per pressure dimension"
+      ]
+    },
+    {
+      "id": "pf-4",
+      "query": "review my skill for quality",
+      "assertions": [
+        "must check instruction budget",
+        "flags if SKILL.md exceeds 500 lines or 5000 words"
+      ]
+    }
+  ]
+}
