@@ -87,11 +87,11 @@ else
   echo "PASS: Instruction framing ratio OK (neg=$NEG_COUNT, pos=$POS_COUNT)"
 fi
 
-# Check 7: Skill type declaration
-if grep -qiE "(skill type:|rigid|flexible)" "$SKILL_FILE"; then
+# Check 7: Skill type declaration (look for explicit "Skill type: RIGID/FLEXIBLE" pattern)
+if grep -qiE "skill type:.*\b(rigid|flexible)\b" "$SKILL_FILE"; then
   echo "PASS: Skill type declared"
 else
-  echo "WARN: No skill type declaration (RIGID or FLEXIBLE)"
+  echo "WARN: No skill type declaration (e.g., 'Skill type: RIGID')"
   WARNINGS=$((WARNINGS + 1))
 fi
 

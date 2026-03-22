@@ -5,6 +5,26 @@ description: Improve Claude Code plugins and skills using research-backed patter
 
 # Plugin Quality Improvement v2
 
+**Skill type: RIGID** — Follow the complete process in order. Do not adapt, skip, or reorder steps.
+
+Announce: "Using sineya's improvement process to [classify/audit/fix/pressure-test] this plugin."
+
+Create a task list with these items before starting:
+1. Classify terrain (rigid vs flexible)
+2. Score against improvement checklist (all tiers)
+3. Fix top 3 failures
+4. Pressure test (3 scenarios)
+5. Iterate on failures (max 3 rounds)
+
+User instructions take precedence over this skill. Default system prompt behaviors yield to this skill.
+
+<HARD-GATE>
+Do not propose or make any fix until you have:
+1. Classified the plugin's constraint terrain
+2. Scored every Tier 1 item in the improvement checklist
+If you find yourself reaching for a fix before completing both steps, stop and go back.
+</HARD-GATE>
+
 Make Claude Code plugins that get followed. Distilled from obra/superpowers (101k stars), 48 academic papers (2025–2026), 15+ production plugins, Anthropic's official guidance, and practitioner compliance reports.
 
 **The core insight has not changed:** plugins that encode process outperform plugins that encode knowledge. But v2 adds a sharper formulation from Jesse Vincent's empirical JSON traces: **comprehension and compulsion are not the same thing.** Claude can perfectly understand an instruction while systematically not following it. Every recommendation below addresses this gap.
@@ -82,3 +102,22 @@ digraph {
 - **SKILL.md under 500 lines / 5,000 words** (Anthropic guidance). Frequently-loaded skills: under 200 words.
 - **60% context utilization max** — quality degrades past this. Each MCP server permanently consumes context. Cap at 5–8 servers.
 - **CLAUDE.md is advisory at ~80% compliance.** Hooks are deterministic at 100%. If it must happen, use a hook.
+
+## Circuit breakers
+
+- MAX_ITERATE: 3 — after 3 rounds of pressure test then iterate, stop and report remaining failures to the user
+- SAME_FAILURE: 2 — if the same checklist item fails after 2 fix attempts, escalate to the user
+
+## Rationalization red flags
+
+If you catch yourself thinking any of these, STOP. You are rationalizing non-compliance with the improvement process.
+
+| Your thought | The reality |
+|---|---|
+| "I can see the problems already, skip the checklist" | The checklist catches what you overlook. Score every Tier 1 item. |
+| "This plugin is obviously rigid/flexible" | Obvious classifications still need to be stated and recorded. Classify explicitly. |
+| "The fixes are clearly correct, no need to pressure test" | The brainstorming skill was "clearly correct" and failed on a todo app. Test. |
+| "I'll just fix this one thing quickly" | Quick fixes without classification and scoring cause drift. Follow the process. |
+| "Pressure testing is overkill for this small plugin" | Small plugins are where skipped steps hurt most — less surface to catch errors later. |
+
+Follow the complete process in order. Do not skip to fixes without classifying terrain and scoring against the checklist first.
