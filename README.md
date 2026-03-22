@@ -1,6 +1,6 @@
 # Sineya
 
-Plugin quality engine. She doesn't speak — she improves.
+Plugin quality engine. It unlocks your plugin's potential.
 
 ## What it does
 
